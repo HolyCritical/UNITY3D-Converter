@@ -3,7 +3,7 @@
 Converts Unity3D asset bundles from Android to iOS. Retargets the platform flag
 and re-encodes Android GPU textures to ASTC.
 
-## Run it
+## Download it
 
 Download as ZIP (From the Green Code Button Dropdown, Extract.)
 
