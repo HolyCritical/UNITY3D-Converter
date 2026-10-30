@@ -1,0 +1,11 @@
+# UnityPy is pinned exactly: this tool depends on UnityPy internals
+# (image data layout, SerializedFile.externals, target-platform fields).
+# A newer UnityPy can silently change those and corrupt output.
+UnityPy==1.25.4
+
+Pillow>=10.0.0,<12
+texture2ddecoder==1.0.6
+astc-encoder-py==0.1.12
+etcpak==0.9.15
+lz4>=4.0.0
+flask>=3.0.0,<4

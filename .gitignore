@@ -1,0 +1,23 @@
+# --- never commit the environment or build output ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.pyarmor/
+pyarmor.bug.log
+
+# --- private plain source (this repo ships the obfuscated build only) ---
+source-plain/
+
+# --- local test artifacts ---
+.playwright-mcp/
+
+# --- game content never belongs in this repo ---
+*.zip
+*.unity3d
+*.bnk
+*.apk
+*.obb

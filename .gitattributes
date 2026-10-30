@@ -1,0 +1,13 @@
+# Batch files must keep CRLF in the repository as well as on disk:
+# cmd.exe misparses bare-LF scripts. "-text" stops git from normalising them.
+*.bat -text
+
+# Everything else may use LF in the repository.
+*.py text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.txt text eol=lf
+*.html text eol=lf
+
+# The obfuscated modules and native runtime are binary.
+*.pyd binary

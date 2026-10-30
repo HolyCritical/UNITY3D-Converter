@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "u3dconv"
+version = "1.0.0"
+description = "Convert Unity asset bundles between platforms (Android to iOS): platform retarget, ASTC texture re-encode, shader externals"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+keywords = ["unity", "asset-bundle", "astc", "etc", "texture", "unitypy"]
+
+[project.scripts]
+u3dconv = "u3dconv.cli:main"
+u3dconv-web = "u3dconv.web:main"
+
+[tool.setuptools]
+packages = ["u3dconv"]
+
+[tool.setuptools.package-data]
+u3dconv = ["webui.html", "pyarmor_runtime_000000/*.pyd", "pyarmor_runtime_000000/*.so"]
