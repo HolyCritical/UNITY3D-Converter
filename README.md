@@ -1,7 +1,11 @@
-# u3dconv
+# .UNITY3D Android 2 iOS
 
 Converts Unity3D asset bundles from Android to iOS. Retargets the platform flag
 and re-encodes Android GPU textures to ASTC.
+
+## Run it
+
+Download as ZIP (From the Green Code Button Dropdown, Extract.)
 
 ## Run it
 
