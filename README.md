@@ -15,7 +15,7 @@ Download as ZIP (From the Green Code Button Dropdown, Extract.)
 install-dependencies.bat
 ```
 
-Checks for Python 3.10+, creates `.venv`, installs dependencies, and verifies the
+Checks for Python 3.13, creates `.venv`, installs dependencies, and verifies the
 tool loads.
 
 **Then, for the drag-and-drop UI:**
@@ -56,7 +56,9 @@ Full list: `python -m u3dconv convert --help`
 - Textures already ASTC or PVRTC are left untouched.
 - Sound banks are verified and copied byte-for-byte; they need no re-encoding.
 - Folder structure is mirrored exactly and checked after every run.
-- Requires Python 3.10+. iOS side needs A8 (iPhone 6) or newer for ASTC.
+- Requires Python 3.13 exactly. Newer versions (3.14, 3.15) cannot load the
+  compiled runtime and have no prebuilt wheels for the dependencies. iOS side
+  needs A8 (iPhone 6) or newer for ASTC.
 
 Assets convert; native code does not. Operates on extracted bundle trees, not
 APK/IPA containers.

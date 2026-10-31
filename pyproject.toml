@@ -7,7 +7,7 @@ name = "u3dconv"
 version = "1.0.0"
 description = "Convert Unity asset bundles between platforms (Android to iOS): platform retarget, ASTC texture re-encode, shader externals"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.13,<3.14"
 license = {file = "LICENSE"}
 keywords = ["unity", "asset-bundle", "astc", "etc", "texture", "unitypy"]
 
