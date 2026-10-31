@@ -5,29 +5,45 @@ and re-encodes Android GPU textures to ASTC.
 
 ## Download it
 
-Download as ZIP (From the Green Code Button Dropdown, Extract.)
+Grab the portable build from [Releases](../../releases/latest). No Python, no
+installer, no setup.
 
-## Run it
+1. Download `UNITY3D-Converter-Portable.zip`
+2. Extract anywhere, e.g. `C:\Tools\UNITY3D-Converter`
+3. Double-click `start-webclient.bat`
 
-**Windows, first time:**
+Your browser opens `http://127.0.0.1:8765/`. Drop a `.zip` of a bundle pack,
+pick a quality, download the iOS pack. Everything runs on your machine, nothing
+is uploaded.
+
+Command line, from inside the extracted folder:
+
+```
+run-cli.bat convert "D:\pack" -o out --rename-platform-dirs
+run-cli.bat inspect "D:\pack"
+run-cli.bat --help
+```
+
+Windows only. The bundle carries its own Python 3.13 runtime, so do not delete
+or move the `python\` folder.
+
+## Run from source
+
+If you would rather use the repository instead of the portable build, you need
+**Python 3.13 exactly** installed — newer versions cannot load the compiled
+runtime and have no prebuilt wheels for the dependencies.
 
 ```
 install-dependencies.bat
 ```
 
-Checks for Python 3.13, creates `.venv`, installs dependencies, and verifies the
-tool loads.
-
-**Then, for the drag-and-drop UI:**
+Creates `.venv`, installs dependencies, and verifies the tool loads. Then:
 
 ```
 start-webclient.bat
 ```
 
-Opens `http://127.0.0.1:8765/`. Drop a `.zip` of a bundle pack, pick a quality,
-download the iOS pack. Runs entirely on your machine.
-
-**Command line:**
+or on the command line:
 
 ```
 .venv\Scripts\python.exe -m u3dconv convert "D:\pack" -o out --rename-platform-dirs
@@ -47,22 +63,20 @@ download the iOS pack. Runs entirely on your machine.
 | `--packer` | `original` | `original`, `none`, `lz4`, `lz4hc`, `lzma` |
 | `--jobs` | CPU count | worker processes |
 | `--dry-run` | off | analyze without writing |
-| `--report` | — | write a JSON report |
+| `--report` | none | write a JSON report |
 
-Full list: `python -m u3dconv convert --help`
+Full list: `run-cli.bat --help`
 
 ## Notes
 
 - Textures already ASTC or PVRTC are left untouched.
 - Sound banks are verified and copied byte-for-byte; they need no re-encoding.
 - Folder structure is mirrored exactly and checked after every run.
-- Requires Python 3.13 exactly. Newer versions (3.14, 3.15) cannot load the
-  compiled runtime and have no prebuilt wheels for the dependencies. iOS side
-  needs A8 (iPhone 6) or newer for ASTC.
+- iOS side needs A8 (iPhone 6) or newer for ASTC.
 
 Assets convert; native code does not. Operates on extracted bundle trees, not
 APK/IPA containers.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE).
